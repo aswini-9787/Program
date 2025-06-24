@@ -1,0 +1,68 @@
+
+<html>
+
+<head>
+
+<title>EMAIL ID VALIDATION</title>
+
+<script language="javascript">
+
+function check()
+  {
+
+if(f.txtname.value.indexOf('@')-1)
+    {
+alert("invalid");
+    }
+else
+
+if((f.txtname.value.indexOf('@")-0)||(f.txtname.value.indexOf('.')=0))(f.txtname.va
+
+lue.indexOf('@'))>
+
+(f.txtname.value.indexOf('.')))
+    {
+alert("invalid email id");
+
+f.txtname.value="";
+    }
+else
+
+alert("valid email id");
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<form name="f">
+
+<table align="center">
+
+<h2 align="center">EMAIL VALIDATION</h2>
+
+<br>
+  <tr>
+
+<td align="right">Email-ID:</td>
+
+<td align="left"><input type="text" name="txtname" size=40>
+
+</tr>
+    <tr>
+<td></td>
+
+<td><input type="button" value="SUBMIT" onClick="check()"/></td>
+
+</tr>
+
+</table>
+
+</form>
+
+</body>
+
+</html>
