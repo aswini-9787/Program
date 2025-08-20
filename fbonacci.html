@@ -1,0 +1,32 @@
+<html>
+<body>
+
+<h2>VB-Script Program</h2>
+
+<form name="f1" method="post" onsubmit="Fib1()">
+    Enter Number: <input type="text" name="t1"><br><br>
+    <input type="submit" name="b1" value="Click to print Fibonacci">
+    <input type="reset" name="b2" value="reset"><br><br>
+</form>
+
+<script type="text/vbscript">
+
+Function Fib1()
+    Dim a, b, c, n1
+    n1 = CInt(f1.t1.value)
+    a = 0
+    b = 1
+    Document.write("Fibonacci Series Numbers<br/>")
+    Do While b <= n1
+        Document.write(b & "<br/>")
+        c = a + b
+        a = b
+        b = c
+    Loop
+    Document.write("<p>End of Program</p>")
+End Function
+
+</script>
+
+</body>
+</html>
