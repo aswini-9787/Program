@@ -1,0 +1,39 @@
+<html>
+<head>
+<script type="text/javascript">
+function upper() {
+    var string = document.form1.string.value;
+    var lower = string.toLowerCase();
+    document.form1.str1.value = lower;
+}
+</script>
+</head>
+
+<body>
+<center>
+<h1>Convert Text to LowerCase</h1>
+</center>
+
+<form name="form1">
+<table align="center">
+
+<tr>
+<td>Enter Text:</td>
+<td><input type="text" name="string" /></td>
+</tr>
+
+<tr>
+<td>Lowercase Text:</td>
+<td><input type="text" name="str1" readonly /></td>
+</tr>
+
+<tr>
+<td colspan="2" align="center">
+<input type="button" value="Convert to Lowercase" onClick="upper()" />
+</td>
+</tr>
+
+</table>
+</form>
+</body>
+</html>
