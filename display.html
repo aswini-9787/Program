@@ -1,0 +1,64 @@
+<html>
+<head>
+<title>Date & Time Program</title>
+<script type="text/javascript">
+
+function Dispdate()
+{
+
+var date = new Date();
+
+var d = date.toDateString();
+
+var time = date.toLocaleTimeString();
+
+var h = date.getHours();
+
+var day = date.getDay();
+
+var min = date.getMinutes();
+
+var m = date.getMonth();
+
+var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+m = monthNames[m];
+
+var dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday","Saturday"];
+
+day = dayNames[day];
+
+document.writeln("<BR><h3>Today Date and Time</h3>");
+
+document.writeln('<BR> Current Date: ' + d);
+
+document.writeln('<br>Current Time: ' + time);
+
+document.writeln('<br>Current Hours: ' + h);
+
+document.writeln('<br>Current Minutes: ' + min);
+
+document.writeln('<br>Current Day: ' + day);
+
+document.writeln('<br>Current Month: ' + m);
+
+}
+
+</script>
+</head>
+<body>
+<BR><BR>
+
+<h1>Display Current Date and Time</h1>
+<form name="form1">
+    <input type="button" value="Click to Display" onClick="Dispdate()" />
+</form>
+<div id="date-time"></div>
+<script>
+
+//Call Dispdate function to display date and time on page load
+Dispdate();
+
+</script>
+</body>
+</html>
