@@ -1,0 +1,88 @@
+Ahh okay ✅ that means your program files (.exe) have also been associated with Windows Photo Viewer.
+That’s why Chrome (and probably all apps) are trying to “open as pictures.”
+
+This is a known issue in Windows 7 — the .exe file association is broken.
+We need to restore the correct registry settings for .exe files.
+
+
+---
+
+🔧 Fix: Restore .exe file association
+
+Option 1 – Ready-made .reg file (easiest)
+
+1. Open Notepad.
+
+
+2. Copy-paste the text below:
+
+
+
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\.exe]
+@="exefile"
+"Content Type"="application/x-msdownload"
+
+[HKEY_CLASSES_ROOT\exefile]
+@="Application"
+"EditFlags"=hex:38,07,00,00
+"FriendlyTypeName"="@shell32.dll,-10150"
+
+[HKEY_CLASSES_ROOT\exefile\shell]
+@="open"
+
+[HKEY_CLASSES_ROOT\exefile\shell\open\command]
+@="\"%1\" %*"
+
+[HKEY_CLASSES_ROOT\exefile\shell\runas]
+@="Run as &administrator"
+"HasLUAShield"=""
+
+[HKEY_CLASSES_ROOT\exefile\shell\runas\command]
+@="\"%1\" %*"
+
+[HKEY_CLASSES_ROOT\exefile\shellex]
+
+[HKEY_CLASSES_ROOT\exefile\shellex\DropHandler]
+@="{86C86720-42A0-1069-A2E8-08002B30309D}"
+
+3. Save it as fix_exe.reg
+
+In Notepad “Save as type” → select All Files, not .txt.
+
+
+
+4. Double-click the file → click Yes to add it to the registry.
+
+
+5. Restart your PC.
+
+
+
+Now .exe files (like Chrome, Word, VLC) should open correctly again. 🎉
+
+
+---
+
+Option 2 – If you cannot open Notepad
+
+If even Notepad doesn’t open because everything launches in Photo Viewer:
+
+Restart your PC in Safe Mode with Command Prompt.
+
+Then type:
+
+assoc .exe=exefile
+ftype exefile="%1" %*
+
+Press Enter.
+
+
+This will restore .exe defaults.
+
+
+---
+
+👉 Do you want me to prepare a ready-to-use .reg file for you, so you can just download and run it instead of copying text manually?
+
